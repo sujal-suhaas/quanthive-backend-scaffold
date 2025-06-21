@@ -11,7 +11,10 @@ MONITORED_PATHS = ["/auth/me", "/protected"]
 def log_api_usage(username: str, path: str, api_key: str = None):
     if path not in MONITORED_PATHS:
         return
-    log_entry = f"{datetime.utcnow().isoformat()} | user: {username} | path: {path} | api_key: {api_key or 'N/A'}\n"
+    log_entry = (
+        f"{datetime.utcnow().isoformat()} | user: {username} | path: {path} | "
+        f"api_key: {api_key or 'N/A'}\n"
+    )
     with log_lock:
         with open(LOG_FILE, "a") as f:
             f.write(log_entry)
