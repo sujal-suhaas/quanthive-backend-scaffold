@@ -1,5 +1,6 @@
-import bcrypt
 import secrets
+
+import bcrypt
 
 
 def generate_api_key(username: str) -> str:

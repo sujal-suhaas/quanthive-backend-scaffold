@@ -1,19 +1,19 @@
-from fastapi import FastAPI, Depends, HTTPException, status, Request
+import uvicorn
+from fastapi import FastAPI, Depends, HTTPException, Request, status
 from fastapi.security import HTTPBearer
 from pydantic import BaseModel
-import uvicorn
 
+from .api_key_utils import generate_api_key
 from .auth import (
-    get_current_user,
     create_access_token,
-    verify_password,
     get_api_key_user,
+    get_current_user,
     router as auth_router,
+    verify_password,
 )
-from .models import User, UserCreate, UserLogin
 from .database import fake_users_db, get_user
 from .metering import log_api_usage
-from .api_key_utils import generate_api_key
+from .models import User, UserCreate, UserLogin
 
 app = FastAPI(title="FastAPI Backend Scaffold", version="1.0.0")
 security = HTTPBearer()
