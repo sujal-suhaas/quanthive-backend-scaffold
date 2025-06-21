@@ -1,4 +1,5 @@
 # Simple in-memory database for demo purposes
+
 fake_users_db = {
     "testuser": {
         "username": "testuser",
@@ -7,6 +8,7 @@ fake_users_db = {
         "is_active": True,
     }
 }
+
 
 def get_user(username: str):
     if username in fake_users_db:
