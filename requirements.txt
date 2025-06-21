@@ -1,6 +1,13 @@
-fastapi
+fastapi==0.110.0
 uvicorn
 python-jose
 python-multipart
 email-validator
 pydantic
+bcrypt
+black==24.3.0
+flake8==7.0.0
+isort==5.13.2
+pytest==8.2.0
+starlette==0.36.3
+httpx==0.27.0
