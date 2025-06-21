@@ -5,8 +5,8 @@ from fastapi import Depends, HTTPException, status, APIRouter
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials, APIKeyHeader
 from jose import JWTError, jwt
 
-from .database import get_user
 from .api_key_utils import generate_api_key
+from .database import get_user
 
 SECRET_KEY = "your-secret-key-change-this-in-production"
 ALGORITHM = "HS256"
