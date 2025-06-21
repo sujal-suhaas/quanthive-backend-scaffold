@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status, Request
 from fastapi.security import HTTPBearer
 from pydantic import BaseModel
-from typing import Optional
 import uvicorn
 
 from .auth import (
