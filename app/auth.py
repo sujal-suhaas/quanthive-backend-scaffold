@@ -1,8 +1,9 @@
 from datetime import datetime, timedelta
-from jose import JWTError, jwt
+from typing import Optional
+
 from fastapi import Depends, HTTPException, status, APIRouter
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials, APIKeyHeader
-from typing import Optional
+from jose import JWTError, jwt
 
 from .database import get_user
 from .api_key_utils import generate_api_key
